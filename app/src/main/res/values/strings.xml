@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MAD LIBS</string>
+    <string name="logo">logo</string>
+    <string name="madliblogo">madlibLogo</string>
+    <string name="choose_the_topic">Choose the topic</string>
+    <string name="button">Button</string>
+    <string name="create_a_story">Create a story</string>
+    <string name="textview">TextView</string>
+    <string name="create_your_story">Create your story</string>
+    <string name="textview2">TextView</string>
+    <string name="next">Next</string>
+    <string name="textview3">TextView</string>
+
+    <string-array name="topics">
+        <item>THE SPACE SHUTTLE</item>
+        <item>RODRICK’S SCHOOL REPORT</item>
+        <item>HOW TO DATE IN SCHOOL</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+    <string name="madlibs">madlibs</string>
+</resources>
