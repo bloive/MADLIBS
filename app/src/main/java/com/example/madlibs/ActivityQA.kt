@@ -38,7 +38,7 @@ class ActivityQA : AppCompatActivity() {
         if (intent.hasExtra("extraText")) {
             title = intent.getStringExtra("extraText").toString()
         }
-        findViewById<EditText>(R.id.input).addTextChangedListener(){
+        findViewById<EditText>(R.id.input).addTextChangedListener() {
             findViewById<Button>(R.id.next).isEnabled = findViewById<EditText>(R.id.input).text.isNotEmpty()
         }
         readFile()
@@ -67,7 +67,7 @@ class ActivityQA : AppCompatActivity() {
                 val replace = "replace$n"
                 Log.i("index", replace)
                 n++
-                text = text.replace(hint, replace)
+                text = text.replaceFirst(hint, replace)
                 hint = hint.substring(1, hint.length-1)
                 hint = hint.replace('_', ' ', true)
                 hints.add(hint)
@@ -94,7 +94,7 @@ class ActivityQA : AppCompatActivity() {
                 createStory()
                 val intent = Intent(this, ActivityStory::class.java)
                 intent.putExtra("extraTextTitle", storyTitle)
-                intent.putExtra("extraText", text)
+                intent.putExtra("extraText", story)
                 startActivity(intent)
             }
         }
@@ -103,10 +103,11 @@ class ActivityQA : AppCompatActivity() {
 
     private fun createStory() {
         var n = 0
+        story = text;
         while (n < hints.size) {
-            story = text.replace("replace$n", answers[n] , false)
+            story = story.replaceFirst("replace$n", answers[n] , false)
             Log.i("index", "replace$n")
-            Log.i("index", answers[n])
+            Log.i("index-", answers[n])
             n++
         }
         Log.i("index", story)
